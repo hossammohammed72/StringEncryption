@@ -3,16 +3,17 @@
 namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class IntegrateWithRobustaApiTest extends TestCase
 {
     /**
-     * A basic test example.
+     * A basic unit test example.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testExample()
     {
         $this->assertTrue(true);
     }
