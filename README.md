@@ -1,78 +1,97 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<h1>String Encryption Algorithm Task (Robusta)</h1> 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<h2>
+    Installation
+</h2>
+ -Clone The Repo
+ 
+ ```
+ git clone https://github.com/hossammohammed72/RobustaStringEncryption.git 
+ ```
+ -Install Dependencies via composer 
+ using
+ 
+ ```  composer update ```
+And Then 
 
-## About Laravel
+``` composer dump-autoload ```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+***Congrats you succesfully installed the repo*** 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h2>
+Usage 
+</h2>
+In general the command have the structure of
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+``` php artisan method:aglorithmName {string} ```
+details below 
+- Using the shift algortihm 
+***encrypt***
+```
+php artisan encrypt:shift {string}
+```
+**decrypt**
+```
+php artisan decrypt:shift {string}
+```
+- Using the Matrix Multiplication algortihm 
+**encrypt**
+```
+php artisan encrypt:matrix {string}
+```
+**decrypt**
+```
+php artisan decrypt:matrix {string}
+```
 
-## Learning Laravel
+- Using the Reverse algortihm 
+**encrypt**
+```
+php artisan encrypt:reverse {string}
+```
+**decrypt**
+```
+php artisan decrypt:reverse {string}
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<h2>Important Remarks</h2>
+Matrix Multiplication Algorithm Follows the following steps
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Encryption: 
 
-## Laravel Sponsors
+a. first each character is converted to it's 7 bit ascii representation and thin is concatenated with leading zeros to be 16-bit number 
+ 
+ b.  the 16-bit number is multiplied by the matrix giving us a non binary 1x16 matrix 
+  
+ c.  each number in the matrix is converted to 8-bit binary representation and then all gets concatenated to form a string of length 
+    8*16 = 128 
+    (i.e each character will result in 128 bit binary string 
+ 
+ d. all the newly 128bit encrypted character all concatenated together to form 1-string which is the cypher. 
+    the cyhper length = #Characters in Orgingal String*128. 
+  
+   **Example** 
+   If we want to encrypt the string using matrix multiplication 
+  ```
+   hello world 
+   ```
+   since the string length is 11 characters then it will result in 11*128=1408 string length 
+   which will be something like 
+   ```   0001011100000110000100010000110000000011000011010000010100001001000011010000101000001111000010010001001000010000000011000000100000011011000011110000111100010111000011100001010000010001000100000001100000001100000011100001011000011110000011100001001000001010000110110000011000010011000101010000101000010101000011010000110100010100000011010000111100010000000110110001000100010000000010010001101100000110000100110001010100001010000101010000110100001101000101000000110100001111000100000001101100010001000100000000100100100111000101010001101000100011000100000010000100010101000101000010000000010010000110110010000000100101000101110001011000010111000010000000010000001001000000110000000000000100000000000000010100000100000000010000011100000101000001110000001000000100000000110010011000011010000110100010010000010000000111010001001100011010000110110001001000010110000111100010101100010000000111010001010100100111000101010001101000100011000100000010000100010101000101000010000000010010000110110010000000100101000101110001011000010111000110100001000100011000000100100000010000010010000001000001000000001011000011000001000000001110000111000000101100010101000011110001101100000110000100110001010100001010000101010000110100001101000101000000110100001111000100000001101100010001000100000000100100010011000001100000111100001110000010010001000100001010000010100000111100001001000010000000110100011000000010100000111000000101```
+   
+2. Decryption :
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+ a. first the cypher is sliced into several equal length strings each equal to 128 (character length in out algorithm) such that each string is the cypher of a certain character.
+ 
+ b. the character is then divided into 16 string of 8-bit strings that represnt the matrix of the character.
+ 
+c. the matrix is then multiplied by the inverse of the encryption matrix given in the task document.
 
-## Contributing
+d. the output is then decrypted back to the original string before encryption.
+ 
+ **Shift Encryption Algorithm** 
+ The algorithm only handles with alphabet characters and doesn't deal with the rest of the ascii table, the other two algorithms handles the whole ascii table.
+ 
+   
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
