@@ -2,6 +2,9 @@
 namespace App\Services;
 
 class MatrixDecryptionAlgorithmService {
+    /**
+     * @var Array $matrix decryption matrix
+     *  */
     protected $matrix = [
     [
     0.087698730443907, 0.106508423872910, -0.035837889522160, -0.018212614575464,
@@ -99,6 +102,11 @@ class MatrixDecryptionAlgorithmService {
     0.121062561797019, 0.095099592970483, 0.052994957136868, -0.246427467822199,
     -0.029773768604971, -0.153276054566094, -0.084954401825375, 0.052024137604019]
     ];
+
+    /**
+    * @param  String $string
+    * @return String  
+     * */ 
     public function decrypt(String $string): String
     {
     $encryptedCharLength = 8*16;

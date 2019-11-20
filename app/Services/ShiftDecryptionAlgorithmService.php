@@ -2,7 +2,10 @@
 namespace App\Services;
 
 class ShiftDecryptionAlgorithmService {
-
+    /**
+    * @param  String $string
+    * @return String  
+     * */ 
     public function decrypt(String $string): String
     {
         for( $i = 0 ; $i<strlen($string) ; $i++){

@@ -2,6 +2,9 @@
 namespace App\Services;
 
 class MatrixEncryptionAlgorithmService {
+     /**
+     * @var Array $matrix encryption matrix
+     *  */
     protected $matrix = [
         [8.000 , 4.000 , 4.000 , 8.000, 7.000 , 8.000 , 7.000 , 1.000 , 9.000 , 4.000 , 1.000 , 1.000 , 1.000, 6.000, 3.000,
         0.000],
@@ -36,6 +39,10 @@ class MatrixEncryptionAlgorithmService {
         [5.000, 9.000, 1.000, 4.000, 2.000, 3.000, 1.000, 0.000, 0.000, 8.000, 5.000, 6.000, 9.000, 9.000, 7.000,
         0.000]
     ];
+    /**
+    * @param  String $string
+    * @return String  
+     * */ 
     public function encrypt(String $string): String
     {
         $outputMatrix = [];
@@ -50,8 +57,8 @@ class MatrixEncryptionAlgorithmService {
                 }
             }
         
-        }
-        //dd($outputMatrix);
+        } 
+        // map each number to 8-bit string and concatenate them
         $outputString = '';
         for($i=0;$i<strlen($string);$i++){
             $sum = '';
