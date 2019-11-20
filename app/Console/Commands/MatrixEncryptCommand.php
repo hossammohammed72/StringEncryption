@@ -3,23 +3,23 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Services\ReverseEncryptionAlgorithmService;
+use App\Services\MatrixEncryptionAlgorithmService;
 
-class ReverseEncryptCommand extends Command
+class MatrixEncryptCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'encrypt:reverse {string}';
+    protected $signature = 'encrypt:matrix {string}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Encrypt string based on reverse encryption method';
+    protected $description = 'Encrypt string based on matrix encryption method';
 
     /**
      * Create a new command instance.
@@ -36,7 +36,7 @@ class ReverseEncryptCommand extends Command
      *
      * @return mixed
      */
-    public function handle(ReverseEncryptionAlgorithmService $encryptionService)
+    public function handle(MatrixEncryptionAlgorithmService $encryptionService)
     {
         //
         $string = $this->argument('string');
