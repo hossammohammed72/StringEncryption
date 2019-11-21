@@ -4,25 +4,19 @@
     Installation
 </h2>
  -Clone The Repo
- ```
-git clone https://github.com/hossammohammed72/RobustaStringEncryption.git
- ```
+ ``` git clone https://github.com/hossammohammed72/RobustaStringEncryption.git ```
  -Install Dependencies via composer** 
  using
- ```
-     composer update 
- ```
+ ```  composer update ```
 And Then 
-```
-    composer dump-autoload 
-```
+``` composer dump-autoload ```
 
-*** Congrats you succesfully installed the repo *** 
+***Congrats you succesfully installed the repo *** 
 
 <h2>
 Usage 
 </h2>
-*** In general the command have the structure of ***
+***In general the command have the structure of ***
 ``` php artisan method:aglorithmName {string} ```
 details below 
 - Using the shift algortihm 
@@ -77,7 +71,7 @@ php artisan decrypt:reverse {string}
  c- the matrix is then multiplied by the inverse of the encryption matrix given in the task document 
  d- the output is then decrypted back to the original string before encryption 
  
- ** Shift Encryption Algorithm** 
+ **Shift Encryption Algorithm** 
  The algorithm only handles with alphabet characters and doesn't deal with the rest of the ascii table, the other two algorithms handles the whole ascii table
  
    
