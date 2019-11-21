@@ -59,12 +59,15 @@ Matrix Multiplication Algorithm Follows the following steps
 
 1. Encryption: 
 
-    a. first each character is converted to it's 7 bit ascii representation and thin is concatenated with leading zeros to be 16-bit number 
-    b.  the 16-bit number is multiplied by the matrix giving us a non binary 1x16 matrix 
-    c.  each number in the matrix is converted to 8-bit binary representation and then all gets concatenated to form a string of length 
+a. first each character is converted to it's 7 bit ascii representation and thin is concatenated with leading zeros to be 16-bit number 
+ 
+ b.  the 16-bit number is multiplied by the matrix giving us a non binary 1x16 matrix 
+  
+ c.  each number in the matrix is converted to 8-bit binary representation and then all gets concatenated to form a string of length 
     8*16 = 128 
     (i.e each character will result in 128 bit binary string 
-    d. all the newly 128bit encrypted character all concatenated together to form 1-string which is the cypher. 
+ 
+ d. all the newly 128bit encrypted character all concatenated together to form 1-string which is the cypher. 
     the cyhper length = #Characters in Orgingal String*128. 
   
    **Example** 
