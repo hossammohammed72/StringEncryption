@@ -10,20 +10,23 @@
  ```
  -Install Dependencies via composer 
  using
+ 
  ```  composer update ```
 And Then 
+
 ``` composer dump-autoload ```
 
-***Congrats you succesfully installed the repo *** 
+***Congrats you succesfully installed the repo*** 
 
 <h2>
 Usage 
 </h2>
-***In general the command have the structure of ***
+***In general the command have the structure of***
+
 ``` php artisan method:aglorithmName {string} ```
 details below 
 - Using the shift algortihm 
-**encrypt**
+***encrypt***
 ```
 php artisan encrypt:shift {string}
 ```
