@@ -1,4 +1,4 @@
-<h1>String Encryption Algorithm Task (Robusta)</h1> 
+<h1>String Encryption Algorithm Task </h1> 
 
 <h2>
     Installation
