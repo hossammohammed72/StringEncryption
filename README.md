@@ -55,7 +55,7 @@ php artisan decrypt:reverse {string}
 ```
 
 <h2>Important Remarks</h2>
-** Matrix Multiplication Algorithm Follows the following steps: **
+**Matrix Multiplication Algorithm Follows the following steps:**
 1- Encryption 
     a-first each character is converted to it's 7 bit ascii representation and thin is concatenated with leading zeros to be 16-bit number 
     b- the 16-bit number is multiplied by the matrix giving us a non binary 1x16 matrix 
