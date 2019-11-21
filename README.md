@@ -4,10 +4,11 @@
     Installation
 </h2>
  -Clone The Repo
+ 
  ```
  git clone https://github.com/hossammohammed72/RobustaStringEncryption.git 
  ```
- -Install Dependencies via composer** 
+ -Install Dependencies via composer 
  using
  ```  composer update ```
 And Then 
